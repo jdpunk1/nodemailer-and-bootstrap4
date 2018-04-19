@@ -1,0 +1,151 @@
+extends layout
+
+block content
+	header
+		#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+			.modal-dialog(role='document')
+				.modal-content
+					form(id="contactForm")
+						.modal-header
+							h5#exampleModalLabel.modal-title Enquire Now
+							button.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') ×
+						.modal-body(class="p-4")
+							
+								.row
+									div(class="col-12 p-6")
+										label(class=" col-3 text-left m-label" for="name") Name
+										input(class=" col-7 text-left" type="text" id="name" name="name" required)
+								.row
+									div(class="col-12 p-6")
+										label(class="col-3 text-left m-label" for="email") email
+										input(class="col-7 text-left" type="email" id="email" name="email" required)
+								.row
+									div(class="col-12 p-6")
+										label(class="col-3 text-left m-label" for="message") Message
+										textarea(class="col-7 text-left" rows="5" type="text" id="message" name="query" required)
+								.row
+									div(class="col-12 p-6")
+										div(id="statusMessage")
+								.row
+									div(class="col-12 p-6 text-right")
+						.modal-footer
+							button.btn.btn-primary(type='submit') Send Message
+							button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+		nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+			a.navbar-brand(href='#')
+				img(src='./img/brand/chromaticlogo.png', width='30', height='30')
+				|  Chromatic Ltd
+			button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
+				span.navbar-toggler-icon
+	main(role='main')
+			#myCarousel.carousel.slide(data-ride='carousel' interval="8000")
+				ol.carousel-indicators
+					li.active(data-target='#myCarousel', data-slide-to='0')
+					li(data-target='#myCarousel', data-slide-to='1')
+					li(data-target='#myCarousel', data-slide-to='2')
+				.carousel-inner
+					.carousel-item.active
+						img.first-slide(src='./img/slides/slide2.jpg', alt='First slide')
+						.container
+							.carousel-caption.text-left
+								h1 Join us and Together..
+								p
+									| We can rule the internet. From a hassle free simple design like this site, to larger scale solutions, we're waiting to hear from you!
+								p
+									a.btn.btn-lg.btn-primary(href='#', role='button' data-toggle="modal" data-target="#myModal") Contact Us
+					.carousel-item
+						img.second-slide(src='./img/slides/slide1.jpg', alt='Second slide')
+						.container
+							.carousel-caption
+								h1 Concise clear Layouts
+								p
+									| Good design is good design, whatever the technology used. We strive to provide aesthetically pleasing results that align with your vision.
+								p
+									a.btn.btn-lg.btn-primary(href='#', role='button' data-toggle="modal" data-target="#myModal") Contact Us
+					.carousel-item
+						img.third-slide(src='./img/slides/slide3.jpg', alt='Third slide')
+						.container
+							.carousel-caption.text-right
+								h1 Intelligent Design at Your Fingertips.
+								p
+									| Responsive Websites that look fresh and appealing on all devices..
+								p
+									a.btn.btn-lg.btn-primary(href='#', role='button' data-toggle="modal" data-target="#myModal") Contact Us
+				a.carousel-control-prev(href='#myCarousel', role='button', data-slide='prev')
+					span.carousel-control-prev-icon(aria-hidden='true')
+					span.sr-only Previous
+				a.carousel-control-next(href='#myCarousel', role='button', data-slide='next')
+					span.carousel-control-next-icon(aria-hidden='true')
+					span.sr-only Next
+
+			.marketing
+				.row(class="marketing-panel" style="background-image: url('./img/chromback.png'); background-repeat: no-repeat; background-size:cover")
+					.col-lg-4
+						img.rounded-circle(src='./img/branding.png', alt='Generic placeholder image', width='140', height='140')
+						h2 Branding
+						p
+							| Quality bespoke logos, full company branding or just something for your app. Dynamic fluid logos with a view to extensibility across all media.
+						p
+							| Whatever your field of business we'll come up with something appropriate and elegant or fun and dynamic.
+						p
+							a.btn.btn-secondary(href='#', role='button' data-toggle="modal" data-target="#myModal") Contact Us »
+					.col-lg-4
+						img.rounded-circle(src='./img/web.png', alt='Generic placeholder image', width='140', height='140')
+						h2 Web Design
+						p
+							| Static web-sites. Responsive design. Small Scale. Large scale.
+							br
+							|               We cover it all, right down to hosting and SEO management.
+						p
+							a.btn.btn-secondary(href='#', role='button' data-toggle="modal" data-target="#myModal") Contact Us »
+					.col-lg-4
+						img.rounded-circle(src='./img/something.png', alt='Generic placeholder image', width='140', height='140')
+						h2 Something More?
+						p
+							| We also provide large-scale solutions for small businesses.
+							br
+							|  Giving you access to user accounts, analytics, product creation. CMS solutions and whatever else you need.
+						p
+							a.btn.btn-secondary(href='#', role='button' data-toggle="modal" data-target="#myModal") Contact Us »
+
+			.container
+				hr.featurette-divider
+				.row.featurette
+					.col-md-7
+						h2.featurette-heading
+							| 
+							span.text-muted Everything you Need..
+						p.lead
+							| We provide bespoke websites for all sorts of businesses, from single page apps to deeper solutions. Recently completed work for <a href="https://englishthisway.com" target="blank"> English This Way </a> involving CMS solutions to produce new courses on the fly, full payment system integration, user profiles and other features.
+					.col-md-5
+						img.featurette-image.img-fluid.mx-auto(src='./img/etwfeatures.png', alt='Generic placeholder image')
+				hr.featurette-divider
+				.row.featurette
+					.col-md-7.order-md-2
+						h2.featurette-heading
+							| I designed my own site on blah.com..
+							span.text-muted 
+						p.lead
+							| Did you? Believe me we know how difficult getting the results you want can be. That's why we're here to help realise your vision and not take up vast amounts of your time, so you can concentrate on the important part of running your business- the actual business!<br> Our friends at <a href="https://workmatting.com"> Workmatting</a> can attest to this. 
+					.col-md-5.order-md-1
+						img.featurette-image.img-fluid.mx-auto(src='./img/matting.png', alt='Generic placeholder image')
+				hr.featurette-divider
+				.row.featurette
+					.col-md-7
+						h2.featurette-heading
+							| We use the MEAN stack
+							span.text-muted
+						p.lead
+							| It's not mean it's lovely- NodeJS is a lightweight server technology that's very robust and provides reliable end-user availability due to it's asynchronous request management system. Express handles the routing, Mongo's your man for storing and managing your data, a noSQL solution.. and Angular? Angular's our favoured frontend framework, a modular masterpiece! These systems are constantly updated by dedicated professionals. Providing us with the tools to fulfill any web design requirement.
+					.col-md-5
+						img.featurette-image.img-fluid.mx-auto(src='./img/mean.png', alt='Generic placeholder image')
+				hr.featurette-divider
+			footer.container
+				p.float-right
+					a(href='#') Back to top
+				p
+					| © 2017-2018 Chromatic, Ltd. ·
+					a(href='#') Privacy
+					|  ·
+					a(href='#') Terms
