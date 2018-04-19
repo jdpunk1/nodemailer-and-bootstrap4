@@ -3,8 +3,8 @@ path = require('path'),
 mg = require('nodemailer-mailgun-transport'),
 auth = {
     auth: {
-      api_key: 'key-6b1cd760a7589b2f305e2fcb42f9f590',
-      domain: 'mg.chromatic.ltd'
+      api_key: 'mailgun-api-key',
+      domain: 'mailgun-domain'
     }
 },
 smtpTransport = nodemailer.createTransport(mg(auth));
@@ -29,8 +29,8 @@ exports.sendMail = async function(req, res, next){
     // console.log(req.body);
     try{
         var mailOptions = {
-            to: 'jdelaney2@hotmail.com',
-            from: 'admin@chromatic.ltd',
+            to: 'your-email@address',
+            from: 'admin@thiswebsite.com',
             subject: 'Query',
             html: req.email
             }
